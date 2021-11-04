@@ -1,15 +1,15 @@
 {
   "name": "acadopedia",
   "version": "beta",
-  "description": "",
-  "main": "src/app.js",
+  "description": "open source for sharing educative questions",
+  "main": "src/server.js",
   "scripts": {
     "test": "jest",
     "watch": "nodemon src/server.js",
     "start": "node src/server.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["education", "repository", "encyclopedia"],
+  "author": "Adagiri Ibrahim",
   "license": "ISC",
   "dependencies": {
     "@graphql-tools/load-files": "^6.5.1",
@@ -24,6 +24,7 @@
     "graphql": "^15.7.0",
     "graphql-date-scalars": "^0.1.1",
     "graphql-resolvers": "^0.4.2",
+    "helmet": "^4.6.0",
     "joi": "^17.4.2",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",

@@ -13,41 +13,10 @@ type Mutation {
 }
 
 type User {
-  "unique id"
-  _id: ID!
-  accountName: String
-  accountNumber: String
-  bankName: String
-  bankCode: String
-  balance: Int!
-  bookingCount: Int!
-  cardName: String
-  cardNumber: String
-  cardExpiry: String
-  cardCVV: String
-  "a users' email address"
-  email: String!
-  "a users' first name"
-  firstName: String!
-  "does the user have admin priviledges"
-  isAdmin: Boolean!
-  isPinSet: Boolean!
-  isAccountSet: Boolean!
-  isCardDetailsSet: Boolean!
-  isVerified: Boolean!
-  lastName: String!
-  name: String!
-  newPassword: String
-  newPin: String
-  oldPin: String
-  passwordResetToken: String
-  passwordResetExpires: Date
-  phoneNumber: String
-  roles: [String!]
-  signupDate: Date!
-  savingPlanCount: Int!
-  userRef: String!
-  visaApplicationCount: Int!
+""
+name: String!
+authId: String!
+pinnedTasks: [ID!]!
 }
 
 type AuthResponse implements MutationResponse {

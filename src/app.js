@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
 const helmet = require("helmet");
-const api = require("./routes/restVersionOneApis");
+// const restVersionOneApis = require("./routes/restVersionOneApis");
 
 const app = express();
 
@@ -18,12 +18,10 @@ app.get("/", (req, res) => {
 app.get("/users", (req, res) => {});
 
 app.use(express.static(path.join(__dirname, "..", "public")));
-app.use("/v1", api);
+// app.use("/v1", restVersionOneApis);
 
 // app.get("/*", (req, res) => {
 //   return res.sendFile(path.join(__dirname, "..", "public", "index.html"));
 // });
 
 module.exports = app;
-
-
