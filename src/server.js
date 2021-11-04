@@ -21,6 +21,7 @@ const schema = makeExecutableSchema({
 async function startApolloServer() {
   await mongoConnect();
 
+
   const server = new ApolloServer({
     schema,
     context: ({ req }) => {

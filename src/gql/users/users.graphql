@@ -5,18 +5,13 @@ type Query {
 type Mutation {
   login(input: LoginInput): AuthResponse!
   signup(input: SignupInput): AuthResponse!
-  verifyEmail(input: VerifyEmailInput): AuthResponse!
-  resendAuthCode(input: ResendAuthCodeInput): AuthResponse!
-  forgotPassword(input: ForgotPasswordInput): AuthResponse!
-  resetPassword(input: ResetPasswordInput): AuthResponse!
-  editProfile(input: EditProfileInput): AuthResponse!
 }
 
 type User {
-""
-name: String!
-authId: String!
-pinnedTasks: [ID!]!
+  ""
+  name: String!
+  authId: String!
+  pinnedTasks: [ID!]!
 }
 
 type AuthResponse implements MutationResponse {
@@ -33,33 +28,5 @@ input LoginInput {
 }
 
 input SignupInput {
-  firstName: String!
-  lastName: String!
   email: String!
-  password: String!
-  phoneNumber: String!
-  receiveNewsLetter: Boolean!
-}
-
-input VerifyEmailInput {
-  token: String!
-  code: String!
-}
-
-input ResendAuthCodeInput {
-  token: String!
-}
-
-input ForgotPasswordInput {
-  email: String!
-}
-input ResetPasswordInput {
-  token: String!
-  password: String!
-}
-
-input EditProfileInput {
-  firstName: String
-  lastName: String
-  phoneNumber: String
 }

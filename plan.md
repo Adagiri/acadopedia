@@ -22,3 +22,16 @@ apis.acadopedia.com/graphql <!-- graphql apis base endpoint -->
 - visitors can export questions as pdf, doc, [current-50-or-current-30]... <!-- -->
 
 - rest apis are only used by other developers who want to use our apis
+
+
+
+__APIS__
+addTask
+verifyTask
+rejectAndFixTask
+rejectAndDeleteTask
+getAllTasks - filter and search inclusive
+getOneTask
+pinTask
+makeAdmin
+makeModerator

@@ -1,7 +1,5 @@
 const mongoose = require("mongoose");
 
-const multipleChoiceOptionsSchema = require("./multipleChoiceOptions.mongo");
-
 const usersSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -17,6 +15,18 @@ const usersSchema = new mongoose.Schema({
   },
   tasks_count: {
     type: Number,
+  },
+  roles: {
+    type: [String],
+    default: [],
+  },
+  isAdmin: {
+    type: Boolean,
+    default: false,
+  },
+  isModerator: {
+    type: Boolean,
+    default: false,
   },
 });
 

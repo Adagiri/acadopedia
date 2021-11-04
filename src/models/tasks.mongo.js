@@ -45,6 +45,10 @@ const tasksSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  verified: {
+    type: Boolean,
+    default: false
+  }
 });
 
-module.exports = mongoose.model("User", tasksSchema);
+module.exports = mongoose.model("Task", tasksSchema);
