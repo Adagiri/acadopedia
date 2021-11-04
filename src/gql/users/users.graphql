@@ -1,0 +1,96 @@
+type Query {
+  getUser: User
+}
+
+type Mutation {
+  login(input: LoginInput): AuthResponse!
+  signup(input: SignupInput): AuthResponse!
+  verifyEmail(input: VerifyEmailInput): AuthResponse!
+  resendAuthCode(input: ResendAuthCodeInput): AuthResponse!
+  forgotPassword(input: ForgotPasswordInput): AuthResponse!
+  resetPassword(input: ResetPasswordInput): AuthResponse!
+  editProfile(input: EditProfileInput): AuthResponse!
+}
+
+type User {
+  "unique id"
+  _id: ID!
+  accountName: String
+  accountNumber: String
+  bankName: String
+  bankCode: String
+  balance: Int!
+  bookingCount: Int!
+  cardName: String
+  cardNumber: String
+  cardExpiry: String
+  cardCVV: String
+  "a users' email address"
+  email: String!
+  "a users' first name"
+  firstName: String!
+  "does the user have admin priviledges"
+  isAdmin: Boolean!
+  isPinSet: Boolean!
+  isAccountSet: Boolean!
+  isCardDetailsSet: Boolean!
+  isVerified: Boolean!
+  lastName: String!
+  name: String!
+  newPassword: String
+  newPin: String
+  oldPin: String
+  passwordResetToken: String
+  passwordResetExpires: Date
+  phoneNumber: String
+  roles: [String!]
+  signupDate: Date!
+  savingPlanCount: Int!
+  userRef: String!
+  visaApplicationCount: Int!
+}
+
+type AuthResponse implements MutationResponse {
+  code: String!
+  success: Boolean!
+  message: String!
+  user: User
+  token: String
+}
+
+input LoginInput {
+  email: String!
+  password: String!
+}
+
+input SignupInput {
+  firstName: String!
+  lastName: String!
+  email: String!
+  password: String!
+  phoneNumber: String!
+  receiveNewsLetter: Boolean!
+}
+
+input VerifyEmailInput {
+  token: String!
+  code: String!
+}
+
+input ResendAuthCodeInput {
+  token: String!
+}
+
+input ForgotPasswordInput {
+  email: String!
+}
+input ResetPasswordInput {
+  token: String!
+  password: String!
+}
+
+input EditProfileInput {
+  firstName: String
+  lastName: String
+  phoneNumber: String
+}

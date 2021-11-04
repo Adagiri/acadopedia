@@ -1,0 +1,13 @@
+type Query {
+  bookings: [Booking]
+  bookingsByDate(date: String!): [Booking!]
+  booking(id: ID!): Booking
+}
+
+type Booking {
+  id: ID!
+  name: String!
+  date: String!
+}
+
+

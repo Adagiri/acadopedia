@@ -1,0 +1,24 @@
+scalar Date
+scalar Time
+scalar DateTime
+scalar DefaultDate
+scalar Any
+scalar Number
+
+type Query {
+  _: Int
+}
+
+type Mutation {
+  _: Int
+}
+
+interface MutationResponse {
+  code: String!
+  success: Boolean!
+  message: String!
+}
+
+interface QueryResponse {
+  code: String!
+}

@@ -1,0 +1,37 @@
+{
+  "name": "acadopedia",
+  "version": "beta",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "nodemon src/server.js",
+    "start": "node src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@graphql-tools/load-files": "^6.5.1",
+    "@graphql-tools/schema": "^8.2.0",
+    "apollo-server-express": "^3.4.0",
+    "aws-sdk": "^2.1016.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "graphql": "^15.7.0",
+    "graphql-date-scalars": "^0.1.1",
+    "graphql-resolvers": "^0.4.2",
+    "joi": "^17.4.2",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "mongoose": "^6.0.12",
+    "morgan": "^1.10.0",
+    "unique-random": "^2.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
