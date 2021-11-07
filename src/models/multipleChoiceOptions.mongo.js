@@ -5,9 +5,8 @@ const multipleChoiceOptionSchema = new mongoose.Schema({
   text: {
     type: String,
     minlength: 1,
-    maxlength: 50,
   },
-  correct: {
+  c: {
     type: Boolean,
     required: true,
   },

@@ -5,26 +5,26 @@ const multipleChoiceOptionSchema = require("./multipleChoiceOptions.mongo");
 const tasksSchema = new mongoose.Schema({
   type: {
     type: String,
-    enum: ["MULTIPLE_CHOICE", "FILL_THE_GAP", "TRUE_OR_FALSE"],
+    enum: ["MULTIPLE_CHOICE", "FILL_GAP", "BOOLEAN"],
     required: true,
   },
   difficulty: {
     type: String,
     enum: ["EASY", "MEDIUM", "HARD"],
   },
-  text: {
+  question: {
     type: String,
     minlength: 3,
     maxlength: 255,
     required: true,
   },
-  ftg: {
+  fill_gap: {
     type: String,
   },
-  options: {
-    type: [multipleChoiceOptionSchema],
+  multiple_choice: {
+    type: Array
   },
-  tof: {
+  boolean: {
     type: Boolean,
   },
   category: {
@@ -34,7 +34,7 @@ const tasksSchema = new mongoose.Schema({
   likes: {
     type: Number,
   },
-  refs: {
+  ref: {
     type: String,
   },
   author: {
@@ -47,8 +47,8 @@ const tasksSchema = new mongoose.Schema({
   },
   verified: {
     type: Boolean,
-    default: false
-  }
+    default: false,
+  },
 });
 
 module.exports = mongoose.model("Task", tasksSchema);
